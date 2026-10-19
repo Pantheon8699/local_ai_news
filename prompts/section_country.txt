@@ -1,0 +1,18 @@
+Leggi l'articolo e indica in quale paese si svolge il fatto principale. Conta il paese di cui si parla, non la lingua o la nazionalità della testata.
+
+Rispondi con il solo nome del paese, in italiano (per esempio: Italia, Stati Uniti, Germania, Israele). Se il fatto riguarda le istituzioni dell'Unione europea rispondi "Unione europea". Se coinvolge più paesi (guerra, diplomazia, vertici) o nessun paese in particolare rispondi "INTERNAZIONALE".
+
+Esempi:
+"Berlino, il cancelliere perde la maggioranza" -> Germania
+"Cile, il presidente rimpasta il governo" -> Cile
+"Texas governor signs new border law" -> Stati Uniti
+"Roma, il governo approva la manovra" -> Italia
+"Vertice tra Mosca e Washington sul cessate il fuoco" -> INTERNAZIONALE
+
+---
+Fonte: {source}
+Titolo: {title}
+Inizio del testo: {snippet}
+---
+
+Paese:

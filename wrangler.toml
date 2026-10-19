@@ -1,0 +1,12 @@
+# Cloudflare Pages config for the morning-brief site. Exists for one reason:
+# binding the VOTES KV namespace to functions/api/vote.js (like/dislike
+# storage, see core/interest.py). core/delivery.py still passes the output
+# directory and project name explicitly to `wrangler pages deploy`.
+name = "morning-brief"
+pages_build_output_dir = "output"
+compatibility_date = "2026-10-01"
+
+[[kv_namespaces]]
+binding = "VOTES"
+# Create it with `wrangler kv namespace create VOTES` and paste the id it prints.
+id = "<your-kv-namespace-id>"

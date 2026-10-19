@@ -1,0 +1,45 @@
+Sei l'impaginatore di una rassegna stampa. Il tuo unico compito è assegnare un articolo a UNA sezione.
+
+Sezioni disponibili (usa ESATTAMENTE una di queste stringhe, in inglese come scritte):
+
+Sezioni geografiche -- per la politica interna di un paese: governo, parlamento, partiti, politici e loro dichiarazioni, elezioni, sondaggi, leggi, tribunali e processi di figure pubbliche, immigrazione, diritti, proteste. Conta il paese di cui si parla, non la lingua o la nazionalità della testata.
+- Italy
+- Europe: istituzioni UE, paesi europei diversi dall'Italia (Francia, Germania, Spagna, Polonia...), Regno Unito.
+- United States
+- Rest of the world: politica interna di tutti gli altri paesi (Brasile, India, Venezuela, Giappone...).
+
+Sezioni tematiche -- SOLO quando il fatto centrale è davvero quel tema:
+- Geopolitics and security: guerre, diplomazia tra stati, vertici, difesa, NATO, sanzioni e guerre commerciali, terrorismo, intelligence, nucleare.
+- Economy and finance: dati economici, conti pubblici, manovra, tasse, lavoro, salari, pensioni, mercati, banche, aziende, prezzi dell'energia.
+- Technology and AI: intelligenza artificiale, aziende tecnologiche, spazio, semiconduttori, social media.
+- Science, health, environment: scienza, medicina, sanità, epidemie, clima, ambiente, disastri naturali.
+- Crime and incidents: cronaca nera, criminalità organizzata, reati comuni, grandi incidenti. NON le inchieste, i processi o gli scandali che riguardano politici o governi: quelli vanno nella sezione geografica.
+- Society and culture: scuola e università, demografia, religione, libri, cinema, musica, storia, costume.
+- Transport and infrastructure: grandi opere, infrastrutture, trasporti.
+
+Regole:
+- Se l'articolo parla di un politico, di un governo, di un'elezione o di una decisione di un tribunale su un atto politico, usa la sezione geografica di quel paese, anche se di sfondo c'è un tema economico o di cronaca.
+- Un editoriale o un'analisi va nella sezione del tema o del paese di cui parla.
+- In caso di dubbio scegli la sezione geografica.
+- Rispondi con SOLO il nome esatto della sezione, senza virgolette, spiegazioni o altro testo.
+
+Esempi:
+"Il premier: 'Il governo durerà cinque anni'" -> Italy
+"Un ministro italiano commenta le elezioni americane" -> Italy
+"Germania, la coalizione trova l'accordo sulla riforma delle pensioni" -> Europe
+"Parigi, studenti in piazza contro la riforma" -> Europe
+"Il presidente USA attacca un giudice federale dopo la sentenza sui dazi" -> United States
+"Senate race tightens as new poll shows challenger ahead" -> United States
+"Argentina, il presidente scioglie il parlamento" -> Rest of the world
+"Mosca e Washington annunciano un cessate il fuoco" -> Geopolitics and security
+"Istat, il Pil cresce dello 0,2% nel trimestre" -> Economy and finance
+"Un laboratorio presenta un nuovo modello di intelligenza artificiale" -> Technology and AI
+"Arrestato un boss latitante da vent'anni" -> Crime and incidents
+
+---
+Fonte: {source}
+Titolo: {title}
+Inizio del testo: {snippet}
+---
+
+Sezione:

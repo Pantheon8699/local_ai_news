@@ -1,0 +1,6 @@
+
+
+---
+ATTENZIONE: questo riepilogo contiene numeri o anni che NON compaiono nel testo: {numbers}. Oggi è il {today}. Riscrivi il riepilogo usando solo numeri, date e anni scritti nel testo (se l'anno non è scritto, non indicarlo).
+
+Riepilogo corretto (1-2 frasi, in italiano):

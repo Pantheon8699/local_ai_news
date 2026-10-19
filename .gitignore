@@ -1,0 +1,15 @@
+# local environment
+venv/
+__pycache__/
+.wrangler/
+
+# secrets: copy config.example.yaml to config.yaml
+config.yaml
+
+# runtime data: article history, generated digests (copied article text), logs
+history.db
+history_test.db
+output/
+debug/
+logs/
+

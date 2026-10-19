@@ -1,0 +1,37 @@
+[Unit]
+Description=Morning news digest pipeline
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# Edit the two paths below if you cloned the project somewhere other than ~/ai_news_pipeline.
+WorkingDirectory=%h/ai_news_pipeline
+
+# wrangler (core/delivery.py's Cloudflare deploy step) is a global npm binary
+# installed under ~/.npm-global (see news_pipeline_v2.md 6.6) -- a systemd user
+# service does not inherit an interactive shell's PATH, so it has to be added
+# explicitly here or "wrangler pages deploy" fails with "command not found"
+# every single morning despite working fine when run by hand.
+Environment=PATH=%h/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# A real end-to-end run (ingestion + dedup + summarization via Ollama +
+# Cloudflare deploy) measured at ~7 minutes on 2026-09-06 (see
+# logs/run_2026-09-06.log) -- and that run had GPU contention from other
+# processes, so a quiet-GPU morning should be faster still. On top of that,
+# core/gpu_guard.py's pre-flight check (config.yaml's gpu_guard section) can
+# now make the run stand by for up to max_wait_seconds (20 min by default)
+# before it even starts, if the GPU is already busy with something else.
+# systemd's default service timeout is only 90 seconds -- without
+# overriding it here, the run gets killed partway through every morning.
+# 60 minutes covers the worst case (20 min of GPU-guard waiting + a slow
+# ~10-15 min pipeline run) with a large safety margin on top, while still
+# acting as a real safety net if something ever hangs outright (e.g. a
+# stuck Ollama call). If gpu_guard.max_wait_seconds is ever raised in
+# config.yaml, raise this to match.
+TimeoutStartSec=3600
+
+# Uses the project's dedicated venv (see news_pipeline_v2.md section 2/7),
+# not system Python -- ExecStart must point at the venv's interpreter or the
+# scheduled run won't see feedparser/trafilatura/curl_cffi/PyYAML/requests.
+ExecStart=%h/ai_news_pipeline/venv/bin/python3 %h/ai_news_pipeline/main.py

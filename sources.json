@@ -1,0 +1,38 @@
+{
+  "Italian National/Regional": [
+    {"source": "ANSA - Politica", "url": "https://www.ansa.it/sito/notizie/politica/politica_rss.xml", "limit": 15, "lean": "wire", "market": "IT"},
+    {"source": "ANSA - Economia", "url": "https://www.ansa.it/sito/notizie/economia/economia_rss.xml", "limit": 10, "lean": "wire", "market": "IT"},
+    {"source": "ANSA - Cronaca", "url": "https://www.ansa.it/sito/notizie/cronaca/cronaca_rss.xml", "limit": 10, "lean": "wire", "market": "IT"},
+    {"source": "Adnkronos", "url": "https://www.adnkronos.com/RSS_Ultimora.xml", "limit": 15, "lean": "wire", "market": "IT"},
+    {"source": "Il Fatto Quotidiano", "url": "https://www.ilfattoquotidiano.it/feed/", "limit": 15, "lean": "left", "market": "IT"},
+    {"source": "La Repubblica", "url": "https://www.repubblica.it/rss/homepage/rss2.0.xml", "limit": 15, "lean": "center-left", "market": "IT"},
+    {"source": "Libero Quotidiano", "url": "https://www.liberoquotidiano.it/rss.xml", "limit": 15, "lean": "right", "market": "IT"}
+  ],
+  "Italian Economy/Finance": [
+    {"source": "Il Sole 24 Ore - Mondo", "url": "https://www.ilsole24ore.com/rss/mondo.xml", "limit": 10, "lean": "financial", "market": "IT"},
+    {"source": "Il Sole 24 Ore - Finanza", "url": "https://www.ilsole24ore.com/rss/finanza.xml", "limit": 10, "lookback_days": 5, "lean": "financial", "market": "IT"}
+  ],
+  "US/World": [
+    {"source": "ANSA - Mondo", "url": "https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml", "limit": 15, "lean": "wire", "market": "IT"},
+    {"source": "BBC News - World", "url": "http://feeds.bbci.co.uk/news/world/rss.xml", "limit": 15, "lean": "center", "market": "US/UK"},
+    {"source": "Politico", "url": "https://www.politico.com/rss/politicopicks.xml", "limit": 15, "lean": "center", "market": "US/UK"},
+    {"source": "Foreign Policy", "url": "https://foreignpolicy.com/feed/", "limit": 10, "lookback_days": 3, "lean": "analysis", "market": "US/UK"},
+    {"source": "Fox News - Politics", "url": "https://moxie.foxnews.com/google-publisher/politics.xml", "limit": 15, "lean": "right", "market": "US/UK"},
+    {"source": "The Daily Beast", "url": "https://www.thedailybeast.com/arc/outboundfeeds/rss/", "limit": 15, "lean": "left", "market": "US/UK"},
+    {"source": "NPR", "url": "https://feeds.npr.org/1001/rss.xml", "limit": 15, "lean": "center", "market": "US/UK"},
+    {"source": "Washington Post - Politics", "url": "https://feeds.washingtonpost.com/rss/politics", "limit": 15, "lean": "center-left", "market": "US/UK"}
+  ],
+  "Tech & AI": [
+    {"source": "Wired", "url": "https://www.wired.com/feed/rss", "limit": 10, "lean": "neutral", "market": "US/UK"},
+    {"source": "ANSA - Tecnologia", "url": "https://www.ansa.it/canale_tecnologia/notizie/tecnologia_rss.xml", "limit": 10, "lean": "wire", "market": "IT"},
+    {"source": "MIT Technology Review", "url": "https://www.technologyreview.com/feed/", "limit": 10, "lean": "neutral", "market": "US/UK"}
+  ],
+  "Opinion/Geopolitics": [
+    {"source": "War on the Rocks", "url": "https://warontherocks.com/feed/", "limit": 8, "lookback_days": 4, "lean": "analysis", "market": "US/UK"},
+    {"source": "The Diplomat", "url": "https://thediplomat.com/feed/", "limit": 8, "lookback_days": 4, "lean": "analysis", "market": "US/UK"},
+    {"source": "Project Syndicate", "url": "https://www.project-syndicate.org/rss", "limit": 8, "lookback_days": 4, "lean": "analysis", "market": "US/UK"},
+    {"source": "GZERO Media", "url": "https://www.gzeromedia.com/feeds/feed.rss", "limit": 8, "lookback_days": 4, "lean": "analysis", "market": "US/UK"},
+    {"source": "Limes", "url": "https://www.limesonline.com/rss", "limit": 8, "lookback_days": 4, "lean": "analysis", "market": "IT"},
+    {"source": "Internazionale - Opinioni", "url": "https://www.internazionale.it/sitemaps/rss_opinioni.xml", "limit": 8, "lookback_days": 4, "lean": "analysis", "market": "IT"}
+  ]
+}

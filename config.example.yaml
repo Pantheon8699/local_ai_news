@@ -1,0 +1,69 @@
+# config.yaml
+#
+# Settings for core/delivery.py and core/gpu_guard.py. Model names,
+# timeouts, and thresholds for the other stages (ingestion/dedup/
+# summarization) stay as constants in their own modules for now --
+# centralizing everything here is a possible future cleanup, not required
+# for either of those modules to work.
+
+cloudflare:
+  # Must match a Cloudflare Pages project that already exists (create it
+  # once with `wrangler pages project create morning-brief`, or let
+  # `wrangler pages deploy` create it on first run if your wrangler
+  # version supports that). Deploy is skipped with a log message if this
+  # is left null.
+  project_name: "morning-brief"
+
+  # Optional. If set, exported as CLOUDFLARE_API_TOKEN for the wrangler
+  # subprocess call -- lets the systemd-triggered run authenticate without
+  # a browser. Leave null to rely on `wrangler login` (interactive OAuth,
+  # run once by hand) having already stored credentials on this machine.
+  # If you set this, keep config.yaml out of version control.
+  api_token: null
+
+# Top-to-bottom display order in the rendered digest. These are the digest
+# sections assigned by core/interest.py's assign_sections() (the "###"
+# headings of interest_profile.md -- see SECTIONS there); any section that
+# shows up in a run but isn't listed here is appended at the end.
+category_order:
+  - "Italy"
+  - "European Union / Europe"
+  - "United States"
+  - "Rest of the world"
+  - "Geopolitics and security"
+  - "Economy and finance"
+  - "Technology and AI"
+  - "Science, health, environment"
+  - "Crime and incidents"
+  - "Society and culture"
+  - "Transport and infrastructure"
+
+# Pre-flight GPU-availability check, run by core/gpu_guard.py before
+# ingest_all() even starts (see that module's docstring for the full
+# reasoning). Checks nvidia-smi for both compute utilization % and VRAM
+# usage % and stands by if either is above threshold_pct, so this
+# pipeline's ~5GB of Ollama models never piles onto an already-busy GPU
+# and risks an out-of-memory crash in whatever else is running.
+gpu_guard:
+  enabled: true
+
+  # Wait if GPU utilization OR VRAM usage is above this percentage.
+  threshold_pct: 50
+
+  # How often to re-check while waiting.
+  poll_interval_seconds: 90
+
+  # Give up and skip this morning's run entirely if the GPU is still above
+  # threshold_pct after this many seconds of waiting (20 min default).
+  # Nothing gets marked as shown when this happens, so tomorrow's
+  # scheduled run reconsiders today's articles from scratch -- see
+  # main.py's exit-code docstring.
+  max_wait_seconds: 1200
+
+# Like/dislike votes cast on the published page (see core/interest.py and
+# functions/api/vote.js). `key` must match the VOTE_KEY secret of the
+# Cloudflare Pages project; the page asks for it once per device, on the
+# first vote. Keep this file out of version control.
+votes:
+  url: null  # e.g. "https://<project>.pages.dev"
+  key: null  # must match the VOTE_KEY secret of the Pages project

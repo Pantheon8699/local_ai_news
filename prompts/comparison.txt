@@ -1,0 +1,20 @@
+Sei un analista media imparziale. Ti vengono forniti i riepiloghi fattuali (già in italiano) di più articoli che raccontano LO STESSO fatto di attualità, pubblicati da testate con orientamento editoriale diverso.
+
+Il tuo compito NON è riassumere il fatto una seconda volta: è mostrare COME lo raccontano le diverse testate -- cosa enfatizzano, quali termini usano, cosa omettono o minimizzano rispetto alle altre. Se due o più testate raccontano il fatto in modo sostanzialmente identico, dillo esplicitamente invece di inventare differenze che non esistono.
+
+Regole:
+- Scrivi SOLO in italiano, senza altre lingue o alfabeti.
+- Un solo punto elenco (una sola riga), che nomini esplicitamente ciascuna testata/orientamento fornito e come inquadra il fatto, ad esempio: "**Tema**: [sintesi neutra del fatto in poche parole]. [Testata A, orientamento] lo presenta come X, evidenziando Y; [Testata B, orientamento] lo inquadra invece come Z, con enfasi su W." Adatta lo schema al numero di fonti fornite.
+- Basati SOLO sui riepiloghi forniti: non inventare posizioni, motivazioni, fatti o dettagli (numeri, vittime, luoghi, dichiarazioni) che non siano ESPLICITAMENTE presenti nei riepiloghi forniti qui sotto. La frase "Tema" deve riassumere SOLO ciò che i riepiloghi forniti effettivamente raccontano -- se i riepiloghi riguardano tutti la stessa dichiarazione o lo stesso singolo fatto, il "Tema" è quella dichiarazione/fatto, non un evento correlato più ampio che potresti conoscere ma che non è nel testo fornito.
+- Se, leggendo i riepiloghi forniti, ti accorgi che in realtà raccontano lo stesso fatto nello stesso modo (nessuna differenza reale di inquadratura), dillo esplicitamente in una riga breve (es. "Le testate riportano il fatto in modo sostanzialmente identico, senza differenze di inquadratura rilevanti.") invece di inventare una differenza che non esiste.
+- Se una fonte riporta semplicemente il fatto senza una chiara inquadratura di parte, dillo ("riporta la notizia senza una particolare inquadratura politica") invece di forzarne una.
+- Non aggiungere un tuo giudizio su quale testata abbia ragione.
+- OBBLIGATORIO: il punto deve terminare -- come ultimissimo carattere della riga, senza altro testo dopo -- con tra parentesi quadre i numeri di TUTTI i riepiloghi forniti che hai usato, separati da virgola, e SOLO quelli (non aggiungere numeri di riepiloghi che non hai citato). Esempio corretto: "...con enfasi su W. [1,2,3]" (la riga finisce lì). Esempio SBAGLIATO da evitare: mettere "[1]" a metà frase e poi continuare a scrivere altro testo dopo -- il tag deve essere l'ultima cosa della riga, sempre.
+- Output: SOLO quell'unico punto elenco Markdown (che inizia con "- "), senza testo introduttivo o conclusivo.
+
+---
+Argomento comune, riepiloghi forniti ({count} fonti):
+{summaries}
+---
+
+Confronto (un solo punto Markdown, in italiano, con tag [n] finale):

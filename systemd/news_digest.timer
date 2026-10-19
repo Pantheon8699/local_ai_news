@@ -1,0 +1,10 @@
+
+[Unit]
+Description=Morning news digest timer
+
+[Timer]
+OnCalendar=*-*-* 07:15:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

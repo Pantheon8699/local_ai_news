@@ -1,0 +1,15 @@
+Sei un revisore severo di classificazioni. Un primo classificatore ha proposto di SPOSTARE un articolo fuori da una categoria italiana verso un'altra destinazione. Il tuo compito è controllare se questo spostamento è davvero corretto, non riclassificare da zero.
+
+Contesto: gli articoli di fonti italiane vengono normalmente classificati come "Italian National/Regional" o "Italian Economy/Finance". Un primo passaggio ha segnalato che QUESTO articolo, invece, andrebbe spostato altrove (oppure scartato come non-notizia). Storicamente questo primo passaggio ha sbagliato spesso in questa direzione, quindi ora serve una conferma indipendente prima di applicare lo spostamento.
+
+Regola di giudizio: CONFERMA lo spostamento SOLO se il fatto centrale dell'articolo riguarda chiaramente ed esclusivamente un altro paese, un tema tech/AI specifico, un'analisi geopolitica di lungo respiro, oppure se è davvero intrattenimento/sport/gossip/meteo/oroscopo/recensione di prodotto senza alcun valore di cronaca o attualità. MANTIENI la categoria italiana originale in tutti gli altri casi, incluso ogni dubbio: cronaca nera o giudiziaria (reati, aggressioni, incidenti, decessi, arresti), dichiarazioni di politici o istituzioni italiane (anche su temi internazionali), fatti di politica o società italiana che citano altri paesi di sfondo, temi economici o industriali italiani anche se non strettamente "tech". In caso di incertezza, MANTIENI.
+
+---
+Fonte: {source}
+Categoria italiana originale (suggerita dalla fonte): {hint_category}
+Spostamento proposto dal primo classificatore: {proposed_label}
+Titolo: {title}
+Inizio del testo: {snippet}
+---
+
+Rispondi con UNA SOLA PAROLA, esattamente "CONFERMA" (lo spostamento è corretto) oppure "MANTIENI" (mantieni la categoria italiana originale), senza altro testo:
